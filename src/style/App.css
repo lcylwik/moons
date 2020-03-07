@@ -1,15 +1,46 @@
-.element {
-  float: left;
-  padding: 50px;
-  width: 20%;
+div.description-right{
+  text-align: right;
 }
-
-.smartphone {
-    float: right;
-    margin: 10px;
+div.description-left{
+  text-align: left;
 }
-
-.tablet {
-  float: left;
-  margin: 10px;
+span.percentage{
+}
+span.total{
+  color: #aaaaaa;
+}
+div.color-1-1{
+  color: #86d045;
+  font-weight: bold;
+}
+div.color-1-2{
+  color: #356517;
+  font-weight: bold;
+}
+div.color-2-1{
+  color: #a8e0eb;
+  font-weight: bold;
+}
+div.color-2-2{
+  color: #295065;
+  font-weight: bold;
+}
+div.color-3-1{
+  color: #b26037;
+  font-weight: bold;
+}
+div.color-3-2{
+  color: #eac62e;
+  font-weight: bold;
+}
+div.color-4-1{
+  color: #653183;
+  font-weight: bold;
+}
+div.color-4-2{
+  color: #d5a8ef;
+  font-weight: bold;
+}
+hr {
+  border-top: 5px solid rgba(0,0,0,.1) !important;
 }

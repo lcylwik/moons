@@ -8,10 +8,12 @@ class Element extends Component {
     const infoElement = this.props.info;
 
     return (
-      <div className="element">
-          {infoElement.name}
-          <Circle dataCircle={infoElement}></Circle>
-          <Description dataCircle={infoElement}></Description>
+      <div className="grafica col-md-4">
+        <Circle dataCircle={infoElement}></Circle>
+        <Description dataCircle={infoElement}></Description>
+        <div className="col-md-12">
+          <hr />
+        </div>
       </div>
     );
   }

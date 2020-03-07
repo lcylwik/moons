@@ -13,20 +13,32 @@ const Description = ({ dataCircle }) => {
         return `${cant} ${tipoCurrency}`;
     }
 
+    const colorDescriptión = () => {
+        const colorTable = `label color-${dataCircle.id}-1`;
+        const colorSmartphone = `label color-${dataCircle.id}-2`;
+        return { colorTable, colorSmartphone}
+    }
+
     return (
-        <div className="description">
-            <div className="tablet">
-                <p>Tablet</p>
-                <div className="percentTablet">
-                    <p>{percentTablet}%</p>
-                    <div className="part">{partPercent(percentTablet)}</div>
+        <div className="description col-md-12">
+            <div className="row">
+                <div className="description-left col-md-6">
+                    <div className={colorDescriptión().colorTable}>
+                        <span>Tablet</span>
+                    </div>
+                    <div className="quantity">
+                        <span className="percentage">{percentTablet}%</span>
+                        <span className="total">{partPercent(percentTablet)}</span>
+                    </div>
                 </div>
-            </div>
-            <div className="smartphone">
-                <p>Smartphone</p>
-                <div className="percentSmartphone">
-                    <p>{percentSmartphone}%</p>
-                    <div className="part">{partPercent(percentSmartphone)}</div>
+                <div className="description-right col-md-6">
+                    <div className={colorDescriptión().colorSmartphone}>
+                        <span>Smartphone</span>
+                    </div>
+                    <div className="quantity">
+                        <span className="percentage">{percentSmartphone}%</span>
+                        <span className="total">{partPercent(percentSmartphone)}</span>
+                    </div>
                 </div>
             </div>
         </div>
