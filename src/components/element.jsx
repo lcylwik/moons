@@ -7,10 +7,16 @@ class Element extends Component {
   render() {
     const infoElement = this.props.info;
 
+    const propsGeneric = {
+      ...infoElement,
+      colorTable: `color-${infoElement.id}-1`,
+      colorSmartphone: `color-${infoElement.id}-2`
+    }
+
     return (
       <div className="grafica col-md-4">
-        <Circle dataCircle={infoElement}></Circle>
-        <Description dataCircle={infoElement}></Description>
+        <Circle dataCircle={propsGeneric}></Circle>
+        <Description dataCircle={propsGeneric}></Description>
         <div className="col-md-12">
           <hr />
         </div>

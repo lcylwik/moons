@@ -5,42 +5,54 @@ div.description-left{
   text-align: left;
 }
 span.percentage{
+  padding-right: 5px;
 }
 span.total{
   color: #aaaaaa;
 }
-div.color-1-1{
+.color-1-1{
   color: #86d045;
+  fill: #86d045;
   font-weight: bold;
 }
-div.color-1-2{
+.color-1-2{
   color: #356517;
+  fill: #356517;
   font-weight: bold;
 }
-div.color-2-1{
+.color-2-1{
   color: #a8e0eb;
+  fill: #a8e0eb;
   font-weight: bold;
 }
-div.color-2-2{
+.color-2-2{
   color: #295065;
+  fill: #295065;
   font-weight: bold;
 }
-div.color-3-1{
-  color: #b26037;
-  font-weight: bold;
-}
-div.color-3-2{
+.color-3-1{
   color: #eac62e;
+  fill: #eac62e;
   font-weight: bold;
 }
-div.color-4-1{
+.color-3-2{
+  color: #b26037;
+  fill: #b26037;
+  font-weight: bold;
+}
+.color-4-1{
   color: #653183;
+  fill: #653183;
   font-weight: bold;
 }
-div.color-4-2{
+.color-4-2{
   color: #d5a8ef;
+  fill: #d5a8ef;
   font-weight: bold;
 }
 hr {
   border-top: 5px solid rgba(0,0,0,.1) !important;
+}
+div.centered{
+  text-align: center;
 }

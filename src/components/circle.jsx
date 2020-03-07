@@ -16,13 +16,10 @@ const Circle = ({ dataCircle }) => {
     .outerRadius(90)
     .innerRadius(100);
 
-  const colors = d3.scaleOrdinal(d3.schemeCategory10);
-
   useEffect(() => {
     const dataChart = dataChartDonut(dataCircle);
 
     const data = createPie(dataChart);
-    console.log(data)
     const group = d3.select(ref.current);
     const groupWithData = group.selectAll("g.arc").data(data);
 
@@ -40,9 +37,11 @@ const Circle = ({ dataCircle }) => {
     path
       .attr("class", "arc")
       .attr("d", createArc)
-      .attr("fill", (d, i) => colors(i));
+      .attr("class", (d, i) => {
+        return d.data.color;
+      });
 
-      const text = groupWithUpdate
+    const text = groupWithUpdate
       .append("text")
       .merge(groupWithData.select("text"));
 
@@ -54,12 +53,14 @@ const Circle = ({ dataCircle }) => {
   }, [])
 
   return (
-    <svg width={200} height={200}>
-      <g
-        ref={ref}
-        transform={`translate(${200 / 2} ${200 / 2})`}
-      />
-    </svg>
+    <div className="centered">
+      <svg width={200} height={200}>
+        <g
+          ref={ref}
+          transform={`translate(${200 / 2} ${200 / 2})`}
+        />
+      </svg>
+    </div>
   );
 }
 

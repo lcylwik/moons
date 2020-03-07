@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 const App = () => {
   return (
-    <div className="main container">
+    <div className="main container mt-5">
       <div className="row">
           {data.map(item => (
             <Element key={item.id} info={item}> </Element>

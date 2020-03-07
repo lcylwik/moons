@@ -5,7 +5,9 @@ const Description = ({ dataCircle }) => {
     const { percentTablet,
         percentSmartphone,
         currency,
-        total } = dataCircle;
+        total,
+        colorTable,
+        colorSmartphone } = dataCircle;
 
     const partPercent = (percent) => {
         const cant = total * percent / 100;
@@ -13,17 +15,11 @@ const Description = ({ dataCircle }) => {
         return `${cant} ${tipoCurrency}`;
     }
 
-    const colorDescriptión = () => {
-        const colorTable = `label color-${dataCircle.id}-1`;
-        const colorSmartphone = `label color-${dataCircle.id}-2`;
-        return { colorTable, colorSmartphone}
-    }
-
     return (
         <div className="description col-md-12">
             <div className="row">
                 <div className="description-left col-md-6">
-                    <div className={colorDescriptión().colorTable}>
+                    <div className={colorTable}>
                         <span>Tablet</span>
                     </div>
                     <div className="quantity">
@@ -32,7 +28,7 @@ const Description = ({ dataCircle }) => {
                     </div>
                 </div>
                 <div className="description-right col-md-6">
-                    <div className={colorDescriptión().colorSmartphone}>
+                    <div className={colorSmartphone}>
                         <span>Smartphone</span>
                     </div>
                     <div className="quantity">
