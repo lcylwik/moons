@@ -1,0 +1,28 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "REVENUE",
+            "total": 200000,
+            "percentTablet": 60,
+            "percentSmartphone": 40,
+            "currency": true
+        },
+        {
+            "id": 2,
+            "name": "IMPRESIONS",
+            "total": 50000000,
+            "percentTablet": 40,
+            "percentSmartphone": 60,
+            "currency": false
+        },
+        {
+            "id": 3,
+            "name": "VISITS",
+            "total": 600000000,
+            "percentTablet": 80,
+            "percentSmartphone": 20,
+            "currency": false
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+.element {
+  float: left;
+  padding: 50px;
+  width: 20%;
+}
+
+.smartphone {
+    float: right;
+    margin: 10px;
+}
+
+.tablet {
+  float: left;
+  margin: 10px;
+}
