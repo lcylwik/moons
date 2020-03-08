@@ -8,21 +8,19 @@ import Area from './area';
 const Circle = ({ dataCircle }) => {
 
   const ref = useRef(null);
+  const dataChart = dataChartDonut(dataCircle);
   const { dataLine, wH, wInt, hInt, id,
     total, name, currency } = dataCircle;
 
-  const createPie = d3
-    .pie()
+  const createPie = d3.pie()
     .value(d => d.count)
     .sort(null);
 
-  const createArc = d3
-    .arc()
+  const createArc = d3.arc()
     .outerRadius(90)
     .innerRadius(100);
 
   useEffect(() => {
-    const dataChart = dataChartDonut(dataCircle);
     const data = createPie(dataChart);
     const group = d3.select(ref.current);
     const groupWithData = group.selectAll("g.arc").data(data);
@@ -50,7 +48,7 @@ const Circle = ({ dataCircle }) => {
     textTotal.attr("text-anchor", "middle")
       .attr('y', -7).text(transformNumber(total, currency))
 
-  }, [])
+  }, [createArc, createPie, currency, dataChart, name, total])
 
   return (
     <div className="centered">

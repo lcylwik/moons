@@ -41,7 +41,7 @@ const LineChart = ({ id, data, width, height }) => {
             .attr("class", (d,i) => {
                 return `line_${id}`;
             })
-    }, [])
+    }, [data, id, line]);
 
     return (
         <svg width={200} height={200}>

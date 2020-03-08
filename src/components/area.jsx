@@ -8,11 +8,11 @@ const Area = ({ id, data, width, height }) => {
     const h = height - 2 * margin, w = width - 2 * margin
 
     const x = d3.scaleLinear()
-        .domain(d3.extent(data, d => d.a)) 
+        .domain(d3.extent(data, d => d.a))
         .range([margin, w])
 
     const y = d3.scaleLinear()
-        .domain([0, d3.max(data, d => d.b)]) 
+        .domain([0, d3.max(data, d => d.b)])
         .range([h, margin]);
 
     const area = d3.area()
@@ -20,45 +20,37 @@ const Area = ({ id, data, width, height }) => {
         .y0(height)
         .y1(d => y(d.b))
         .curve(d3.curveBasis);
- 
+
     useEffect(() => {
         const group = d3.select(ref.current);
         const groupWithData = group.selectAll("g").data(data);
         groupWithData.exit().remove();
 
-        const groupWithUpdate = groupWithData.enter()
-            .append("g")
+        const groupWithUpdate = groupWithData.enter().append("g")
 
-        const path = groupWithUpdate.append("path")
-            .merge(groupWithData.select("path"));
-
-        const clipPath = groupWithUpdate.append("clipPath");
-
-        clipPath.attr("id", `MiClip_${id}`)
+        groupWithUpdate.append("clipPath")
+            .attr("id", `MiClip_${id}`)
             .append("path").attr("d", area(data))
 
-        const circle_1 = groupWithUpdate
-            .append("circle")
+        groupWithUpdate.append("circle")
             .attr("id", "circulo_1")
             .attr("cx", "75")
             .attr("cy", "0")
             .attr("r", "85")
 
-        const circle_2 = groupWithUpdate
-            .append("circle")
+        groupWithUpdate.append("circle")
             .attr("id", "circulo_2")
             .attr("cx", "75")
             .attr("cy", "0")
             .attr("r", "90")
 
-        const use = groupWithUpdate
-            .append("use")
+        groupWithUpdate.append("use")
             .attr("clip-path", `url(#MiClip_${id})`)
             .attr("xlink:href", "#circulo_1")
             .attr("class", (d, i) => {
                 return `curve_${id}`;
             })
-    }, [])
+    }, [data, area, id]);
 
 
     return (
