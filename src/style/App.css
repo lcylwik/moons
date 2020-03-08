@@ -40,16 +40,17 @@ span.total{
   fill: #b26037;
   font-weight: bold;
 }
-.color-4-1{
-  color: #653183;
-  fill: #653183;
-  font-weight: bold;
+.line {
+  stroke: #356517;
+  fill: none;
+  stroke-width: 2;
 }
-.color-4-2{
-  color: #d5a8ef;
-  fill: #d5a8ef;
-  font-weight: bold;
+
+.area {
+  stroke: none;
+  fill: #ebfadd;
 }
+
 hr {
   border-top: 5px solid rgba(0,0,0,.1) !important;
 }

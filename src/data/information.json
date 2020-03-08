@@ -6,7 +6,18 @@
             "total": 200000,
             "percentTablet": 60,
             "percentSmartphone": 40,
-            "currency": true
+            "currency": true,
+            "dataLine": [
+                {"a": 1, "b": 5},
+                {"a": 2, "b": 6},
+                {"a": 3, "b": 5},
+                {"a": 4, "b": 4},
+                {"a": 5, "b": 7},
+                {"a": 6, "b": 8},
+                {"a": 7, "b": 7},
+                {"a": 8, "b": 6},
+                {"a": 9, "b": 7}
+            ]
         },
         {
             "id": 2,
@@ -14,7 +25,19 @@
             "total": 50000000,
             "percentTablet": 40,
             "percentSmartphone": 60,
-            "currency": false
+            "currency": false,
+            "dataLine": [
+                {"a": 1, "b": 3},
+                {"a": 2, "b": 6},
+                {"a": 3, "b": 5},
+                {"a": 4, "b": 4},
+                {"a": 5, "b": 5},
+                {"a": 6, "b": 6},
+                {"a": 7, "b": 4},
+                {"a": 8, "b": 5},
+                {"a": 9, "b": 4}
+            ]
+            
         },
         {
             "id": 3,
@@ -22,7 +45,18 @@
             "total": 600000000,
             "percentTablet": 80,
             "percentSmartphone": 20,
-            "currency": false
+            "currency": false,
+            "dataLine": [
+                {"a": 1, "b": 5},
+                {"a": 2, "b": 6},
+                {"a": 3, "b": 5},
+                {"a": 4, "b": 4},
+                {"a": 5, "b": 7},
+                {"a": 6, "b": 8},
+                {"a": 7, "b": 7},
+                {"a": 8, "b": 6},
+                {"a": 9, "b": 7}
+            ]
         }
     ]
 }
