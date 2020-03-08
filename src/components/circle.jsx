@@ -42,8 +42,7 @@ const Circle = ({ dataCircle }) => {
     const text = groupWithUpdate.append("text")
       .merge(groupWithData.select("text"));
 
-    text.attr("text-anchor", "middle")
-      .attr('y', -30).text(name)
+    text.attr('y', -30).text(name).attr('class','total');
 
     const textTotal = groupWithUpdate.append("text")
       .merge(groupWithData.select("text"));

@@ -7,8 +7,10 @@ div.description-left{
 span.percentage{
   padding-right: 5px;
 }
-span.total{
+.total{
   color: #aaaaaa;
+  fill: #aaaaaa;
+  text-anchor: middle;
 }
 .color-1-1{
   color: #86d045;
