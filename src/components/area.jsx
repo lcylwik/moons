@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 
-const Area = ({ data, width, height }) => {
+const Area = ({ id, data, width, height }) => {
 
     const ref = useRef(null);
     const margin = 5;
@@ -40,7 +40,7 @@ const Area = ({ data, width, height }) => {
             .attr("d", area(data))
             .attr("class", 'area');
     }, [])
-    
+
 
     return (
         <svg width={200} height={200}>

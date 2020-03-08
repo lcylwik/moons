@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 
-const LineChart = ({ data, width, height }) => {
+const LineChart = ({ id, data, width, height }) => {
 
     const ref = useRef(null);
     const margin = 5;
@@ -38,14 +38,15 @@ const LineChart = ({ data, width, height }) => {
 
         path
             .attr("d", line(data))
-            .attr("class", 'line')
+            .attr("class", (d,i) => {
+                return `line_${id}`;
+            })
     }, [])
 
     return (
         <svg width={200} height={200}>
             <g ref={ref} transform={`translate(${100 / 4} ${200 / 2})`} />
         </svg>
-
     )
 }
 

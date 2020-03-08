@@ -8,7 +8,7 @@ import Area from './area';
 const Circle = ({ dataCircle }) => {
 
   const ref = useRef(null);
-  const { dataLine, wH, wInt, hInt } = dataCircle;
+  const { dataLine, wH, wInt, hInt, id } = dataCircle;
 
   const createPie = d3
     .pie()
@@ -55,8 +55,8 @@ const Circle = ({ dataCircle }) => {
   return (
     <div className="centered">
       <svg width={wH} height={wH} >
-        <Line data={dataLine} width={wInt} height={hInt} />
-        <Area data={dataLine} width={wInt} height={hInt}/>
+        <Line id={id} data={dataLine} width={wInt} height={hInt} />
+        <Area id={id} data={dataLine} width={wInt} height={hInt}/>
         <circle cx="91%" cy="94%" r="30" fill="white"/>
         <circle cx="9.3%" cy="94%" r="30" fill="white"/>
         <g
