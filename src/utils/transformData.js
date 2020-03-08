@@ -10,7 +10,7 @@ const dataChartDonut = (data) =>{
 
 const transformNumber = (cant, currency = false) => {
     const part = currency 
-    ? cant.toLocaleString('de-DE', {style: 'currency', currency: "EUR"}) 
+    ? `${cant.toLocaleString('de-DE')} €`
     : cant.toLocaleString('de-DE');
     return part;
 }

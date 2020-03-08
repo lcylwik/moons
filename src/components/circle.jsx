@@ -47,6 +47,7 @@ const Circle = ({ dataCircle }) => {
 
     textTotal.attr("text-anchor", "middle")
       .attr('y', -7).text(transformNumber(total, currency))
+      .attr("class", "textInside");
 
   }, [createArc, createPie, currency, dataChart, name, total])
 
