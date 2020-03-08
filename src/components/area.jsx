@@ -22,22 +22,17 @@ const Area = ({ id, data, width, height }) => {
         .curve(d3.curveBasis);
  
     useEffect(() => {
-
         const group = d3.select(ref.current);
         const groupWithData = group.selectAll("g").data(data);
-
         groupWithData.exit().remove();
 
-        const groupWithUpdate = groupWithData
-            .enter()
+        const groupWithUpdate = groupWithData.enter()
             .append("g")
 
-        const path = groupWithUpdate
-            .append("path")
+        const path = groupWithUpdate.append("path")
             .merge(groupWithData.select("path"));
 
-        path
-            .attr("d", area(data))
+        path.attr("d", area(data))
             .attr("class", (d,i) => {
                 return `curve_${id}`;
             });

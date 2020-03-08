@@ -7,7 +7,7 @@ class Element extends Component {
   render() {
     const infoElement = this.props.info;
     const wH = 200;
-    const [ wInt, hInt] = [170, 90];
+    const [ wInt, hInt] = [170, 89];
 
     const propsGeneric = {
       ...infoElement,

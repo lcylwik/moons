@@ -22,43 +22,43 @@ const Circle = ({ dataCircle }) => {
 
   useEffect(() => {
     const dataChart = dataChartDonut(dataCircle);
-
     const data = createPie(dataChart);
     const group = d3.select(ref.current);
     const groupWithData = group.selectAll("g.arc").data(data);
     groupWithData.exit().remove();
 
-    const groupWithUpdate = groupWithData
-      .enter()
+    const groupWithUpdate = groupWithData.enter()
       .append("g")
 
-    const path = groupWithUpdate
-      .append("path")
+    const path = groupWithUpdate.append("path")
       .merge(groupWithData.select("path.arc"));
 
-    path
-      .attr("d", createArc)
+    path.attr("d", createArc)
       .attr("class", (d, i) => {
         return d.data.color;
       });
 
-    const text = groupWithUpdate
-      .append("text")
+    const text = groupWithUpdate.append("text")
       .merge(groupWithData.select("text"));
 
-    text
-      .attr("text-anchor", "middle")
-      .attr('y', -5)
-      .text(dataCircle.name);
+    text.attr("text-anchor", "middle")
+      .attr('y', -30).text(dataCircle.name)
+
+    const textTotal = groupWithUpdate.append("text")
+      .merge(groupWithData.select("text"));
+
+    textTotal.attr("text-anchor", "middle")
+      .attr('y', -7).text(dataCircle.total)
+
   }, [])
 
   return (
     <div className="centered">
       <svg width={wH} height={wH} >
         <Line id={id} data={dataLine} width={wInt} height={hInt} />
-        <Area id={id} data={dataLine} width={wInt} height={hInt}/>
-        <circle cx="91%" cy="94%" r="30" fill="white"/>
-        <circle cx="9.3%" cy="94%" r="30" fill="white"/>
+        <Area id={id} data={dataLine} width={wInt} height={hInt} />
+        <circle cx="91%" cy="94%" r="30" fill="white" />
+        <circle cx="9.3%" cy="94%" r="30" fill="white" />
         <g
           ref={ref}
           transform={`translate(${wH / 2} ${wH / 2})`}
@@ -66,6 +66,6 @@ const Circle = ({ dataCircle }) => {
       </svg>
     </div>
   );
-}      
+}
 
 export default Circle;
