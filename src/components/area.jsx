@@ -38,7 +38,9 @@ const Area = ({ id, data, width, height }) => {
 
         path
             .attr("d", area(data))
-            .attr("class", 'area');
+            .attr("class", (d,i) => {
+                return `curve_${id}`;
+            });
     }, [])
 
 
