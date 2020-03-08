@@ -83,3 +83,7 @@ hr {
 div.centered {
   text-align: center;
 }
+
+#circulo_2 {
+   fill: rgb(256,256,256);
+}
