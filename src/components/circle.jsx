@@ -1,14 +1,15 @@
 import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 
-import { dataChartDonut } from '../utils/transformDonutChart';
+import { dataChartDonut, transformNumber } from '../utils/transformData';
 import Line from './line';
 import Area from './area';
 
 const Circle = ({ dataCircle }) => {
 
   const ref = useRef(null);
-  const { dataLine, wH, wInt, hInt, id } = dataCircle;
+  const { dataLine, wH, wInt, hInt, id,
+    total, name, currency } = dataCircle;
 
   const createPie = d3
     .pie()
@@ -42,13 +43,13 @@ const Circle = ({ dataCircle }) => {
       .merge(groupWithData.select("text"));
 
     text.attr("text-anchor", "middle")
-      .attr('y', -30).text(dataCircle.name)
+      .attr('y', -30).text(name)
 
     const textTotal = groupWithUpdate.append("text")
       .merge(groupWithData.select("text"));
 
     textTotal.attr("text-anchor", "middle")
-      .attr('y', -7).text(dataCircle.total)
+      .attr('y', -7).text(transformNumber(total, currency))
 
   }, [])
 

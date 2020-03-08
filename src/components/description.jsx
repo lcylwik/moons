@@ -1,4 +1,5 @@
 import React from 'react';
+import { transformNumber } from '../utils/transformData';
 
 const Description = ({ dataCircle }) => {
 
@@ -11,8 +12,8 @@ const Description = ({ dataCircle }) => {
 
     const partPercent = (percent) => {
         const cant = total * percent / 100;
-        const tipoCurrency = currency ? '€' : '';
-        return `${cant} ${tipoCurrency}`;
+        const part = transformNumber(cant, currency);
+        return part;
     }
 
     return (
