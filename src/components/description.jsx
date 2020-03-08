@@ -1,5 +1,5 @@
 import React from 'react';
-import { transformNumber } from '../../utils/transformData';
+import { transformNumber } from '../utils/transformData';
 
 const Description = ({ dataCircle }) => {
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 
-import { dataChartDonut, transformNumber } from '../../utils/transformData';
+import { dataChartDonut, transformNumber } from '../utils/transformData';
 import Line from './line';
 import Area from './area';
 
@@ -55,10 +55,8 @@ const Circle = ({ dataCircle }) => {
   return (
     <div className="centered">
       <svg width={wH} height={wH} >
-        <Line id={id} data={dataLine} width={wInt} height={hInt} />
         <Area id={id} data={dataLine} width={wInt} height={hInt} />
-        <circle cx="91%" cy="94%" r="30" fill="white" />
-        <circle cx="9.3%" cy="94%" r="30" fill="white" />
+        <Line id={id} data={dataLine} width={wInt} height={hInt} />
         <g
           ref={ref}
           transform={`translate(${wH / 2} ${wH / 2})`}
