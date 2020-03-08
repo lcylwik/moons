@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 
-import { dataChartDonut, transformNumber } from '../utils/transformData';
+import { dataChartDonut, transformNumber } from '../../utils/transformData';
 import Line from './line';
 import Area from './area';
 
