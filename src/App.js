@@ -3,18 +3,21 @@ import { BrowserRouter, Route } from 'react-router-dom';
 
 import './style/App.css';
 import Element from './components/element';
+import Elements from './carrousel/elements'
 import { data } from './data/information.json';
 import 'bootstrap/dist/css/bootstrap.css';
 
 const Home = () => {
   return (
-    <div className="main container mt-5">
+    <div className="main">
+      <Elements></Elements> 
       <div className="row">
         {data.map(item => (
           <Element key={item.id} info={item}/>
         ))}
       </div>
-    </div>)
+    </div>
+    )
 }
 
 const App = () => {
